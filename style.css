@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&family=Fredoka&family=Quicksand:wght@300;500;700&display=swap');
+
+@font-face {
+    font-family: myFont;
+    src: url(./pokemon/Pokemon\ Hollow.ttf);
+}
+
+
+
+
+body {
+    margin: 0;
+    background-color: #000000;
+    font-family: 'Fredoka', sans-serif;
+    color: azure;
+
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: myFont;
+    border-radius: 10px;
+    font-size: 60px;
+    justify-content: center;
+    display: flex;
+    color: azure;
+    width: 480px;
+    height: 119px;
+
+}
+
+/* #container-tarjetas {
+    width: -webkit-fill-available;
+} */
+
+.subtitulo {
+    font-family: 'Fredoka', sans-serif;
+    color: azure;
+    font-size: 30px;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    border: solid 2px;
+    width: 280px;
+    border-radius: 20px;
+    height: 190px;
+    background-color: #4E4FEB;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.tarjeta-de-mokepon img {
+    width: 162px;
+}
+
+
+
+input {
+    display: none;
+}
+
+input:checked + label{ /* con el signo de + indicamos que seleccionamos un elemento hermano */
+    background: #068FFF;
+}
+
+#btn-mascota {
+    font-size: 20px;
+    border-radius: 40px;
+    margin-top: 70px;
+    font-family: Fredoka, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(247, 249, 249);
+    width: 236px;
+    height: 80px;
+    border: 2px solid;
+}
+
+#seleccionar-ataque {
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-ataque {
+    background-color: #4E4FEB;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: rgb(247, 249, 249);
+    width: 80px;
+    color: rgb(247, 249, 249);
+    font-size: 20px;
+    font-family: Fredoka, sans-serif;
+    margin: 0 10px;
+}
+
+
+#mensajes {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 20px;
+    width: 300px;
+    border: solid 1px;
+    flex-direction: column;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#btn-reiniciar {
+    border-radius: 20px;
+    background-color: #4E4FEB;
+    height: 40px;
+    width: 100px;
+    font-family: 'Fredoka', sans-serif;
+    color: white;
+    border-color: rgb(247, 249, 249);
+}
+
+.combate {
+    display: grid;
+    grid-template-columns: 100px 100px;/*esta propieda nos crea tantas columnas como queramos */
+    gap: 74px;
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px;
+    justify-items: center;
+    justify-content: center;
+}
+
+#ataque-de-jugador, #ataque-de-enemigo {
+    border: solid 1px ;
+    border-radius: 20px;
+    width: 120px;
+}
+
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title2 {
+    font-family: myFont;
+    justify-content: center;
+    display: flex;
+    color: azure;
+    height: 119px;
+    font-size: 60px;
+
+}
+
+.movimiento-btn {
+    margin: 20px 10px 0px 10px;
+    background-color: #4E4FEB;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: rgb(247, 249, 249);
+    color: rgb(247, 249, 249);
+    font-size: 20px;
+    font-family: Fredoka, sans-serif;
+    text-align: center;
+}
+
+#titulo2 {
+    text-align: center;
+    font-family: myFont;
+
+}
+
+.movimientos {
+    display: flex;
+    flex-direction: column;
+}
+
+#up img{
+    width: 50px;
+    height: 50px;
+}
+
+
+#right img {
+    width: 50px;
+    height: 50px;
+}
+
+#down img {
+    width: 50px;
+    height: 50px;
+}
+
+#left img {
+    width: 50px;
+    height: 50px;
+}
+
+
+#mapa {
+    border: 2px solid white;
+
+}
+
+#ver-mapa {
+    font-size: 20px;
+    border-radius: 40px;
+    margin-top: 70px;
+    font-family: Fredoka, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(247, 249, 249);
+
+
+}
+
+@media (max-width: 620px) {
+    .tarjetas {
+        flex-direction: column;
+    }
+
+    .ataques {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .title2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #ver-mapa {
+        padding: 0;
+        margin-top: 0;
+        margin-right: 24px;
+
+    }
+
+    .movimientos {
+        width: 350px;
+        margin-top: 100px;
+    }
+
+    .move {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #mapa {
+        width: 350px;
+    }
+
+    .title {
+        font-size: 45px;
+    }
+
+    #seleccionar-mascota {
+        margin-right: 22px;
+    }
+}

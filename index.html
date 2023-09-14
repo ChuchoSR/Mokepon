@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <section id="seleccionar-mascota">
+        <h1 class="title">Mokepon! 🔥💧🌱</h1>
+        
+        <h2 class="subtitulo">Elige a tu mascota:</h2>
+
+        <div id="container-tarjetas" class="tarjetas">
+            
+        </div>
+
+        <button id="btn-mascota">Seleccionar</button>
+
+    </section>
+
+    <section id="ver-mapa">
+        <h2 class="subtitulo" id="titulo2">Recorre el mapa con tu mokepon.</h2>
+        <canvas id="mapa"></canvas>
+        <div class="movimientos">
+            <button type="button" class="movimiento-btn" id="up" 
+            onmouseup="detenMovimiento()" 
+            onmousedown="moverT()"
+            ontouchend="detenMovimiento()" 
+            ontouchstart="moverT()"> <img src="./image/up.svg" alt="up"></button>
+        
+        <div class="move"> 
+            <button type="button" class="movimiento-btn" id="left" 
+            onmouseup="detenMovimiento()" 
+            onmousedown="moverL()"
+            ontouchend="detenMovimiento()" 
+            ontouchstart="moverL()"> <img src="./image/left.svg" alt="left"></button>
+            
+            <button type="button" class="movimiento-btn" id="down" 
+            onmouseup="detenMovimiento()" 
+            onmousedown="moverB()"
+            ontouchend="detenMovimiento()" 
+            ontouchstart="moverB()"> <img src="./image/down.svg" alt="down"></button>
+            
+            <button type="button" class="movimiento-btn" id="right"  
+            onmouseup="detenMovimiento()" 
+            onmousedown="moverR()"
+            ontouchend="detenMovimiento()" 
+            ontouchstart="moverR()"> <img src="./image/right.svg" alt="right"></button>
+        </div>
+        </div>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h1 class="title">Mokepon! 🔥💧🌱</h1>
+        
+        <h2 class="subtitulo">Elige tu ataque:</h2>
+        
+        <div id="contenedor-ataques" class="ataques">
+            
+        </div>
+
+            <div id="mensajes">
+                <p id="resultado">Estás listo??!!</p>
+
+                <section id="reiniciar">
+                    <button id="btn-reiniciar">Reiniciar</button>
+                </section>
+            </div>
+
+        <div class="combate">
+            <div>
+                <p id="vidas-jugador">0</p>
+                <p id="mascota-jugador"></p> 
+                <div id="ataque-de-jugador"></div>
+            </div>
+
+            <div>
+                <p id="vidas-enemigo">0</p>
+                <p id="mascota-enemigo"></p>
+                <div id="ataque-de-enemigo"></div>   
+            </div>  
+        </div>
+    </section>
+    <script src="./mokepon.js"></script>
+</body>
+</html>
