@@ -106,13 +106,110 @@ let falkyEnemigo = new Mokepon('Falky', './image/falky.png', 5, './image/falkyCa
 let kinerillaEnemigo = new Mokepon('Kinerilla', './image/kinerilla.png', 5, './image/kinerillaCabeza.png')
 let ilametEnemigo = new Mokepon('Ilamet', './image/ilamet.png', 5, './image/ilametCabeza.png')
 
-const HIPODOGE_ATAQUES = [
+hipodoge.ataques.push (
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🌱', id: 'boton-tierra' },
+)
+
+hipodogeEnemigo.ataques.push (
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🌱', id: 'boton-tierra' },
+)
+
+capipepo.ataques.push (
+    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🔥', id: 'boton-fuego' },
+)
+
+capipepoEnemigo.ataques.push (
+    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '🌱', id: 'boton-tierra' },
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🔥', id: 'boton-fuego' },
+)
+
+ratigueya.ataques.push (
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🔥', id: 'boton-fuego' }, 
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🌱', id: 'boton-tierra' },
+)
+
+ratigueyaEnemigo.ataques.push (
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🔥', id: 'boton-fuego' },
+    { nombre: '🔥', id: 'boton-fuego' }, 
+    { nombre: '💧', id: 'boton-agua' },
+    { nombre: '🌱', id: 'boton-tierra' },
+)
+
+falky.ataques.push (
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' },
+)
+
+falkyEnemigo.ataques.push (
+    { nombre: '🌱', id: 'btn-fuego' },
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' },
+)
+
+kinerilla.ataques.push (
+    { nombre: '🔥', id :'btn-fuego' },
+    { nombre: '🔥', id :'btn-fuego' },
+    { nombre: '🔥', id :'btn-fuego' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' }
+)
+
+kinerillaEnemigo.ataques.push (
+    { nombre: '🔥', id :'btn-fuego' },
+    { nombre: '🔥', id :'btn-fuego' },
+    { nombre: '🔥', id :'btn-fuego' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' }
+)
+
+ilamet.ataques.push (
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' }
+)
+
+ilametEnemigo.ataques.push (
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '💧', id :'btn-agua' },
+    { nombre: '🌱', id :'btn-tierra' },
+    { nombre: '🌱', id :'btn-tierra' }
+)
+/* const HIPODOGE_ATAQUES = [
     { nombre: '💧', id: 'boton-agua' },
     { nombre: '💧', id: 'boton-agua' },
     { nombre: '💧', id: 'boton-agua' },
     { nombre: '🔥', id: 'boton-fuego' },
     { nombre: '🌱', id: 'boton-tierra' },
 ]
+
+
 
 hipodoge.ataques.push(...HIPODOGE_ATAQUES)
 hipodogeEnemigo.ataques.push(...HIPODOGE_ATAQUES)
@@ -167,7 +264,7 @@ const ILAMET_ATAQUES = [
     { nombre: '🌱', id :'btn-tierra' }
 ]
 ilamet.ataques.push(...ILAMET_ATAQUES)
-ilametEnemigo.ataques.push(...ILAMET_ATAQUES)
+ilametEnemigo.ataques.push(...ILAMET_ATAQUES) */
 
 
 mokepones.push(hipodoge,capipepo,ratigueya, falky, kinerilla, ilamet)
@@ -318,8 +415,8 @@ function secuenciaAtaque() {
             }
             if (ataqueJugador.length === 5) {
                 /*  -----> enviarAtaques() */
-                ataqueAleatorioEnemigo()
             }
+            ataqueAleatorioEnemigo()
         })
     })
     
