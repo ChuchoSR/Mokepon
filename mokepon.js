@@ -4,6 +4,9 @@ const btnMascotaJugador = document.getElementById('btn-mascota')
 const botonReiniciar = document.getElementById('btn-reiniciar')
 sectReiniciar.style.display='none'; 
 
+const instrucciones = document.getElementById('instrucciones')
+const btnInstruccion = document.getElementById('entendido')
+
 const sectSelectMascota= document.getElementById('seleccionar-mascota')
 const spanMascotaJugador = document.getElementById('mascota-jugador');
 
@@ -21,6 +24,7 @@ const containerAtaques = document.getElementById('contenedor-ataques')
 const sectionMapa = document.getElementById('ver-mapa')
 const mapa = document.getElementById('mapa')
 
+let instruccionesMostradas = true;
 let jugadorId = null
 let enemigoID = null
 let entrando = 0
@@ -269,13 +273,34 @@ ilametEnemigo.ataques.push(...ILAMET_ATAQUES) */
 
 mokepones.push(hipodoge,capipepo,ratigueya, falky, kinerilla, ilamet)
 
-function iniciarJuego() {
-    
+function mostrarInstrucciones () {
+    sectSelectMascota.style.display = 'none'
     sectSelectAtack.style.display = 'none'
     sectionMapa.style.display = 'none'
 
+    instrucciones.style.display = 'flex';
+
+    console.log("Instrucciones mostradas"); // Agrega esto para verificar si se llama la función
+    btnInstruccion.addEventListener('click', iniciarJuego);
+}
+
+btnInstruccion.addEventListener("click" ,function() {
+    console.log("Boton 'Ir al juego' clickeado"); //Agrega esto para verificar si se dispara el evento
+    iniciarJuego();
+})
+
+function iniciarJuego() {
+    
+    instrucciones.style.display = 'none'
+    sectSelectAtack.style.display = 'none'
+    sectionMapa.style.display = 'none'
+    sectSelectMascota.style.display = 'flex'
+
     //el metodo forEach nos itera por cada elemento que hay dentro de nuestro array
     //en este caso que pasa, por cada elemento en el array, genera esta estructura de html, en el html para asi generarlo de forma automatica por cada mokepon que exista dentro de nuestro array
+
+    containerTarjetas.innerHTML = '';
+
     mokepones.forEach((mokepon) => {
         opcionDeMokepones = `
         <input type="radio" name="mascota" id=${mokepon.nombre} />
@@ -552,10 +577,20 @@ function crearMensajeFinal(resultadoFinal) {
 }
 
 function reiniciarJuego() {
-    location.reload()/* location es un objeto que se refiere netamente a una ubicacion de nuestro navegador (url exacto)
+    location.reload()
+    iniciarJuego()
+
+    
+    /* location es un objeto que se refiere netamente a una ubicacion de nuestro navegador (url exacto)
     reload es un metodo de location que es una funcion que recarga la ubicacion inicial */
     
+}
 
+function mostrarSeleccionMascota() {
+    instrucciones.style.display = 'none';
+    sectSelectAtack.style.display = 'none';
+    sectionMapa.style.display = 'none';
+    sectSelectMascota.style.display = 'flex';
 }
 
 function aleatorio(min, max) {
@@ -796,4 +831,12 @@ function revisarColision(enemigo) {
     seleccionarMascotaEnemigo(enemigo)
 }
 
-window.addEventListener('load', iniciarJuego)
+window.addEventListener('load', mostrarInstrucciones, () => {
+    if (instruccionesMostradas) {
+        mostrarInstrucciones();
+        instruccionesMostradas = false;
+    } else {
+        iniciarJuego();
+    }
+})
+//window.addEventListener('load', iniciarJuego)
